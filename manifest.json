@@ -1,0 +1,16 @@
+{
+  "name": "Everything",
+  "short_name": "Everything",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons":[
+    {
+      "src":"/IMG_0183.png",
+      "type": "image/png",
+      "sizes": "150x150"
+    },
+  ]
+}

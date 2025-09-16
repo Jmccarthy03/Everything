@@ -1,0 +1,66 @@
+ <head>
+	<title>Everything</title>
+  	<script src="ai.js"></script>
+    	<script src="universal.js"></script>
+	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    	<meta name="apple-mobile-web-app-title" content="Everything">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="apple-touch-icon" sizes="150x150" href="IMG_0183.png">
+	 <link rel="stylesheet" href="Universal.css">
+ 
+	<style>
+		
+		h1 {
+			text-align: center;
+			  margin-top: 18px;
+		}
+
+		div{
+			bottom: 3;
+			left: 37%;
+			position: fixed;
+		}
+		
+
+		input {
+			width: 300px;
+		}
+		
+		button {
+			background-color: green;
+			color: black;
+			border-color: green;
+		}
+
+		
+		
+		 
+	</style>
+ </head>
+ 
+ <body>
+	 <header>
+		<h1>Ask Ai</h1>
+	 </header>
+	 
+	 <ul>
+  <li><a href="ulhome.html">Home</a></li>
+  <li><a href="Articles/Art.html">Articles</a></li>
+  <li><a href="Games/games.html">Games</a></li>
+  <li><a href="info.html">Site Info</a></li>
+  <li><a class="active" href="ai.html">Ai</a></li>
+  <li><a href="Scammer.html">Microsoft Support</a></li>
+</ul>
+	
+<div>
+	<input id="question" type="text">
+	<button id="askbutton" onclick= "clearPrompt()" >Ask</button>
+	<button id="trump" onclick= "tgpt()" >Ask Trump</button>
+	<button id="biden" onclick= "ab()" >Ask Biden</button>
+</div>
+	<h2 id="answer"></h2>
+ </body>
+

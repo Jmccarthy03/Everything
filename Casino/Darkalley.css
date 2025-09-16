@@ -1,0 +1,18 @@
+ body{
+    background-image: url('../IMG_0301.jpeg');
+ }
+
+#casino{
+    position: relative;
+    left: 65%;
+    top: 41%;
+    text-decoration: none;
+    color: white;
+}
+#shame{
+    position: relative;
+    left: 3%;
+    top: 41%;
+    text-decoration: none;
+    color: white;
+}
