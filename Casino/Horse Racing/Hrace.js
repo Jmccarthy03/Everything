@@ -1,9 +1,12 @@
-
+let playermoney = 1000
 let bet = document.getElementById('money').value;
+document.getElementById('pmoney').innerHTML=playermoney;
 
-function betbutter(){
-  Race();
-  checkbet();
+function start(){
+  if (bet <= playermoney)
+    Race();
+    checkbet();
+  document.getElementById('pmoney').innerHTML=playermoney;
 }
 function race (){
   let winnum = Math.floor(Math.random() * 6) + 1;
@@ -40,9 +43,11 @@ function race (){
 }
 
 function checkbet(){
+  playermoney -= bet;
   if (bethorse == fplace) 
-    bet *= 2 
-  if (bethorse == runnerup)
-    bet *= 1.5
+    let return = bet *= 2; 
+  else if (bethorse == runnerup)
+    let return = bet *= 1.5;
+  playermoney += return
 }
 
