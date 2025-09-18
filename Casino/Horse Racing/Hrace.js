@@ -1,53 +1,58 @@
-let playermoney = 1000
-let bet = document.getElementById('money').value;
-document.getElementById('pmoney').innerHTML=playermoney;
+let fplace = "none";
+let runnerup = "none";
+let bethorse = "none";
+let playermoney = 1000;
 
-function start(){
-  if (bet <= playermoney)
-    Race();
-    checkbet();
-  document.getElementById('pmoney').innerHTML=playermoney;
-}
-function race (){
-  let winnum = Math.floor(Math.random() * 6) + 1;
-    if (winnum == 1)
-     let fplace = "Buttercup";
-     let cansec = ['Lighting', 'Slowpoke', 'Pegasus', 'Thunderbolt', 'Barry Allen']
-     let secnum = Math.floor(Math.random() * cansec.length);
-     let runnerup = cansec[secnum];
-    else if (winnum == 2)
-      let fplace = "Lightning";
-      let cansec = ['Buttercup', 'Slowpoke', 'Pegasus', 'Thunderbolt', 'Barry Allen']
-      let secnum = Math.floor(Math.random() * cansec.length);
-      let runnerup = cansec[secnum];
-    else if (winnum == 3)
-      let fplace = "Slowpoke";
-      let cansec = ['Lighting', 'Buttercup', 'Pegasus', 'Thunderbolt', 'Barry Allen']
-      let secnum = Math.floor(Math.random() * cansec.length);
-      let runnerup = cansec[secnum];
-    else if (winnum == 4)
-      let fplace = "Pegasus";
-      let cansec = ['Lighting', 'Slowpoke', 'Buttercup', 'Thunderbolt', 'Barry Allen']
-      let secnum = Math.floor(Math.random() * cansec.length);
-      let runnerup = cansec[secnum];
-    else if (winnum == 5)
-      let fplace = "Thunderbolt";
-      let cansec = ['Lighting', 'Slowpoke', 'Pegasus', 'Buttercup', 'Barry Allen']
-      let secnum = Math.floor(Math.random() * cansec.length);
-      let runnerup = cansec[secnum];
-    else if (winnum == 6)
-      let fplace = "Barry Allen";
-      let cansec = ['Lighting', 'Slowpoke', 'Pegasus', 'Thunderbolt', 'Buttercup']
-      let secnum = Math.floor(Math.random() * cansec.length);
-      let runnerup = cansec[secnum];
+document.getElementById('pmoney').innerHTML = playermoney;
+
+function placeBet(horse) {
+  bethorse = horse;
+  let bet = parseInt(document.getElementById('money').value);
+
+  if (isNaN(bet) || bet <= 0) {
+    alert("Please enter a valid bet.");
+    return;
+  }
+
+  if (bet > playermoney) {
+    alert("You don’t have enough money to place that bet!");
+    return;
+  }
+
+  Race();
+  checkbet(bet);
+  document.getElementById('pmoney').innerHTML = playermoney;
 }
 
-function checkbet(){
-  playermoney -= bet;
-  if (bethorse == fplace) 
-    let return = bet *= 2; 
-  else if (bethorse == runnerup)
-    let return = bet *= 1.5;
-  playermoney += return
+// horse button functions
+function betbutter() { placeBet("Buttercup"); }
+function betlight() { placeBet("Lightning"); }
+function betslow() { placeBet("Slowpoke"); }
+function betpeg() { placeBet("Pegasus"); }
+function betbolt() { placeBet("Thunderbolt"); }
+function betba() { placeBet("Barry Allen"); }
+
+function Race() {
+  let horses = ["Buttercup", "Lightning", "Slowpoke", "Pegasus", "Thunderbolt", "Barry Allen"];
+  let winnum = Math.floor(Math.random() * horses.length);
+  fplace = horses[winnum];
+
+  // remove winner from array for runner-up selection
+  let others = horses.filter(h => h !== fplace);
+  runnerup = others[Math.floor(Math.random() * others.length)];
+
+  document.getElementById('winner').innerHTML = `Winner: ${fplace}, Runner-up: ${runnerup}`;
 }
 
+function checkbet(bet) {
+  playermoney -= bet; // subtract the bet
+
+  let winnings = 0;
+  if (bethorse === fplace) {
+    winnings = bet * 2;
+  } else if (bethorse === runnerup) {
+    winnings = Math.floor(bet * 1.5);
+  }
+
+  playermoney += winnings;
+}
