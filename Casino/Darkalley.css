@@ -1,5 +1,5 @@
  body{
-    background-image: url('../IMG_0301.jpeg');
+    background-image: url('/Darkalley.jpeg');
  }
 
 #casino{
@@ -14,5 +14,5 @@
     left: 3%;
     top: 41%;
     text-decoration: none;
-    color: pink;
+    color: white;
 }
