@@ -1,0 +1,59 @@
+<html>
+  <head>
+	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    	<meta name="apple-mobile-web-app-title" content="Everything">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="apple-touch-icon" sizes="150x150" href="IMG_0183.png">
+	 <link rel="stylesheet" href="Universal.css">
+    <title>Morse Code</title>
+    <style>
+  #tgraph{
+    color: white;
+  }
+		
+    </style>
+</head>
+
+  
+
+<body>
+
+  <header>
+    <h1>Morse Code</h1>
+  </header>
+  
+<main>
+
+<ul>
+  <li><a class="active" href="ulhome.html">Home</a></li>
+  <li><a href="Articles/Art.html">Articles</a></li>
+  <li><a href="Games/games.html">Games</a></li>
+  <li><a href="info.html">Site Info</a></li>
+  <li><a href="ai.html">Ai</a></li>
+  <li><a href="Scammer.html">Microsoft Support</a></li>
+</ul>
+ <body id="body">
+   <input type="text" placeholder="tap here" id="tgraph">
+
+<script>
+document.getElementById("tgraph").addEventListener("keydown", myFunction);
+
+function myFunction() {
+  document.getElementById("body").style.backgroundColor = "white";
+ document.getElementById("tgraph").style.backgroundColor = "white";
+}
+
+document.getElementById("tgraph").addEventListener("keyup", meFunction);
+
+function meFunction() {
+  document.getElementById("body").style.backgroundColor = "black";
+ document.getElementById("tgraph").style.backgroundColor = "black";
+}
+</script>
+
+ </body>
+</main>
+</html>
