@@ -49,6 +49,9 @@
    <input type="text" placeholder="tap here" id="tgraph">
 
 <img id="mckey" src="IMG_0317.png">
+	<Button onclick=test()>Morse Code Test</Button>
+	<input id="answer">
+	<Button onclick=submit()>Submit</Button> 
 <script>
 document.getElementById("tgraph").addEventListener("keydown", myFunction);
 
@@ -63,6 +66,11 @@ function meFunction() {
   document.getElementById("body").style.backgroundColor = "black";
  document.getElementById("tgraph").style.backgroundColor = "black";
 }
+
+function test() {
+ let number = Math.floor(Math.random() * 26) + 1; //* list.length);
+	if (number == 1) let letter = "a" 
+				  }
 </script>
 
  </body>
