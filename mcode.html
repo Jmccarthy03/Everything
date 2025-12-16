@@ -74,8 +74,15 @@ function off() {
 }
 
 function test() {
- let number = Math.floor(Math.random() * 26) + 1; //* list.length);
-	if (number == 1) let letter = "a";
+ //let number = Math.floor(Math.random() * 26) + 1; //* list.length);
+	let number = 1; 
+	if (number == 1) 
+		let letter = "a";
+		on()
+		setTimeout(off,100)
+		on()
+		setTimeout(off,300)
+		
 		else if (number == 2) let letter = "b";
 		else if (number == 3) let letter = "c";
 		else if (number == 4) let letter = "d";
