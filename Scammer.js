@@ -1,6 +1,7 @@
  
 
 async function getAnswer() {
+	let key = document.getElementById('key').value;
 	let inputText = document.getElementById('question').value;
     let prompt = "Answer this question as if you are an Indian Scammer who says he is from microsoft support:"
 	
@@ -12,7 +13,7 @@ async function getAnswer() {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": "Bearer "
+				"Authorization": "Bearer" key,
 			},
 			body: JSON.stringify({
 				"model": "llama-3.3-70b-versatile",
