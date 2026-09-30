@@ -16,7 +16,7 @@ async function getAnswer() {
 				"Authorization": "Bearer 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" ,
 			},
 			body: JSON.stringify({
-				"model": "meta-llama/llama-prompt-guard-2-22m",
+				"model": "openai/gpt-oss-20b",
 				"messages": [{ "role": "user", "content": question }],
 				"temperature": 1,
 				"max_tokens": 1024
