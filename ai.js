@@ -30,7 +30,7 @@ async function getAnswer() {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": "Bearer "
+				"Authorization": "Bearer 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"
 			},
 			body: JSON.stringify({
 				"model": "openai/gpt-oss-20b",
