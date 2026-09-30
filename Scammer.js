@@ -13,10 +13,10 @@ async function getAnswer() {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": "Bearer" key,
+				"Authorization": "Bearer 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" ,
 			},
 			body: JSON.stringify({
-				"model": "llama-3.3-70b-versatile",
+				"model": "meta-llama/llama-prompt-guard-2-22m",
 				"messages": [{ "role": "user", "content": question }],
 				"temperature": 1,
 				"max_tokens": 1024
