@@ -13,7 +13,7 @@ async function getAnswer() {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": "Bearer": key,
+				"Authorization": "Bearer" key,
 			},
 			body: JSON.stringify({
 				"model": "llama-3.3-70b-versatile",
